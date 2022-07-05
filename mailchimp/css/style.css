@@ -1,0 +1,93 @@
+*{
+    margin: 0 auto;
+    font-family:'Times New Roman', Times, serif;
+}
+
+a{
+    text-decoration: none;
+    color: aqua;
+}
+
+label{
+    font-weight: bold;
+}
+
+.container{
+    display: flex;
+    width: 100%;
+}
+
+.principal-div{
+    width: 40%;
+}
+
+img{
+    justify-content: center;
+    width: 400px;
+    margin: 50px 0;
+}
+
+.secondary-div{
+    width: 60%;
+}
+ 
+.title-text h1, p{
+    margin: 20px 0;
+}
+
+div{
+    margin: 20px 0;
+}
+
+div>label{
+    display: flex;
+    margin: 10px 0;
+}
+
+div>input{
+    width: 80%;
+    height: 30px;
+}
+
+div .list{
+    display: flex;
+}
+
+ul li{
+    color: aqua;
+    list-style-type: disc;
+}
+ul li span{
+    color: black;
+}
+
+.list-one{
+    width: 50%;
+}
+
+.list-two{
+    width: 50%;
+}
+
+.confirms {
+    display: flex;
+    width: 100%;
+}
+
+.button-type{width: 20%;}
+.check-confirm{width: 50%;}
+
+.checkbox {
+    width: 20px;
+    margin: 0px 20px;
+}
+
+.check-confirm{
+    display: flex;
+}
+
+.button{
+    width: 100px;
+    height: 50px;
+    background-color: transparent;
+} 
