@@ -1,0 +1,262 @@
+// Definicion de Variables
+$colors: (
+  "color-main": #ee7879,
+  "background-main": #2a3166,
+  "color-hero-primary": #f4abaa,
+  "color-hero-secondary": #cae7df,
+  "color-html": coral,
+  "color-css": royalblue,
+  "color-javascript": yellow,
+  "color-node": greenyellow,
+  "color-mongo": green,
+  "color-react": purple,
+);
+
+$textSizes: (
+  "size-h1": 30px,
+  "size-h2": 24px,
+  "size-h3": 20px,
+  "size-p": 18px,
+  "size-span": 20px,
+  "size-a": 18px,
+  "size-li": 30px,
+);
+
+$fonts: (
+  "title": Verdana,
+  "text": Helvetica,
+);
+
+$spacing: (
+  "block": 20px,
+  "list": 10px,
+  "title": 15px,
+  "text": 10px,
+);
+
+$medias: (
+  "tablet": 740px,
+  "mobile": 480px,
+);
+
+$headers: (
+  "height": 30px,
+  "width": 100%,
+);
+
+$spans: (
+  "height": 50px,
+);
+
+$info-size: 200px;
+
+// Definicion de Mixins
+@mixin flexible($direction, $cut, $justify, $align) {
+  display: flex;
+  flex-flow: $direction $cut;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin tranformTitle($size, $type, $color) {
+  font-size: $size;
+  font-family: $type;
+  color: $color;
+}
+
+@mixin tranformText($size, $type, $color) {
+  font-size: $size;
+  font-family: $type;
+  color: $color;
+}
+
+@mixin tranformAnchor($size, $type, $color) {
+  font-size: $size;
+  font-family: $type;
+  color: $color;
+  text-decoration: none;
+}
+
+@mixin tranformSpan($size, $type, $height) {
+  font-size: $size;
+  font-family: $type;
+  height: $height;
+}
+
+@mixin absolutePosition($bottom, $left) {
+  position: absolute;
+  bottom: $bottom;
+  left: $left;
+}
+
+// Definicion Mixins Medias
+
+@mixin mobile() {
+  @media screen and (max-width: map-get($medias, "mobile")) {
+    @content;
+  }
+}
+
+@mixin tablet() {
+  @media screen and (max-width: map-get($medias, "tablet")) {
+    @content;
+  }
+}
+
+// ------------------------------------------
+
+body {
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+.header {
+  background-color: map-get($colors, "color-hero-primary");
+  height: map-get($headers, "height");
+  width: map-get($headers, "width");
+
+  .nav {
+    width: map-get($headers, "width");
+
+    &__list {
+      @include flexible(row, wrap, space-around, center);
+      list-style: none;
+      gap: map-get($spacing, "list");
+      margin: 0;
+      li {
+        a {
+          @include tranformAnchor(
+            map-get($textSizes, "size-a"),
+            map-get($fonts, "text"),
+            map-get($colors, "background-main")
+          );
+        }
+      }
+    }
+  }
+}
+
+.hero {
+  background-color: map-get($colors, "background-main");
+  height: 500px;
+  position: relative;
+  @include tablet() {
+    height: 400px;
+  }
+  @include mobile() {
+    height: 300px;
+  }
+  &__h1 {
+    @include tranformTitle(
+      map-get($textSizes, "size-h1"),
+      map-get($fonts, "title"),
+      map-get($colors, "color-hero-secondary")
+    );
+    @include absolutePosition(50%, 5%);
+  }
+  &__p {
+    @include tranformText(
+      map-get($textSizes, "size-p"),
+      map-get($fonts, "text"),
+      map-get($colors, "color-hero-primary")
+    );
+    @include absolutePosition(35%, 5%);
+    @include tablet() {
+      @include absolutePosition(30%, 5%);
+    }
+    @include mobile() {
+      @include absolutePosition(5%, 5%);
+    }
+  }
+  &__span {
+    @include tranformSpan(
+      map-get($textSizes, "size-span"),
+      map-get($fonts, "text"),
+      map-get($spans, "height")
+    );
+    &--html {
+      background-color: map-get($colors, "color-html");
+    }
+    &--css {
+      background-color: map-get($colors, "color-css");
+    }
+    &--javascript {
+      background-color: map-get($colors, "color-javascript");
+    }
+    &--node {
+      background-color: map-get($colors, "color-node");
+    }
+    &--mongo {
+      background-color: map-get($colors, "color-mongo");
+    }
+    &--react {
+      background-color: map-get($colors, "color-react");
+    }
+  }
+}
+
+.info {
+  @include flexible(row, wrap, space-around, center);
+  gap: map-get($spacing, "block");
+  &__container {
+    width: $info-size;
+    height: 200px;
+
+    @include flexible(column, wrap, space-around, center);
+
+    &--html {
+      background-color: map-get($colors, "color-html");
+    }
+    &--css {
+      background-color: map-get($colors, "color-css");
+    }
+    &--javascript {
+      background-color: map-get($colors, "color-javascript");
+    }
+    &--node {
+      background-color: map-get($colors, "color-node");
+    }
+    &--mongo {
+      background-color: map-get($colors, "color-mongo");
+    }
+    &--react {
+      background-color: map-get($colors, "color-react");
+    }
+  }
+}
+
+.gallery {
+  @include flexible(row, wrap, space-around, center);
+  margin: map-get($spacing, "block");
+  .gallery-container {
+    @include flexible(column, wrap, space-around, center);
+
+    .gallery-image {
+      width: 450px;
+
+      @include mobile() {
+        width: 250px;
+      }
+
+      &__image {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.footer {
+  @include flexible(row, wrap, space-around, center);
+
+  .footer-image {
+    width: 50px;
+    &__image {
+      width: 100%;
+    }
+  }
+}

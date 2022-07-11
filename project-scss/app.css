@@ -1,0 +1,174 @@
+body {
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+.header {
+  background-color: #f4abaa;
+  height: 30px;
+  width: 100%;
+}
+.header .nav {
+  width: 100%;
+}
+.header .nav__list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+  gap: 10px;
+  margin: 0;
+}
+.header .nav__list li a {
+  font-size: 18px;
+  font-family: Helvetica;
+  color: #2a3166;
+  text-decoration: none;
+}
+
+.hero {
+  background-color: #2a3166;
+  height: 500px;
+  position: relative;
+}
+@media screen and (max-width: 740px) {
+  .hero {
+    height: 400px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .hero {
+    height: 300px;
+  }
+}
+.hero__h1 {
+  font-size: 30px;
+  font-family: Verdana;
+  color: #cae7df;
+  position: absolute;
+  bottom: 50%;
+  left: 5%;
+}
+.hero__p {
+  font-size: 18px;
+  font-family: Helvetica;
+  color: #f4abaa;
+  position: absolute;
+  bottom: 35%;
+  left: 5%;
+}
+@media screen and (max-width: 740px) {
+  .hero__p {
+    position: absolute;
+    bottom: 30%;
+    left: 5%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .hero__p {
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+  }
+}
+.hero__span {
+  font-size: 20px;
+  font-family: Helvetica;
+  height: 50px;
+}
+.hero__span--html {
+  background-color: coral;
+}
+.hero__span--css {
+  background-color: royalblue;
+}
+.hero__span--javascript {
+  background-color: yellow;
+}
+.hero__span--node {
+  background-color: greenyellow;
+}
+.hero__span--mongo {
+  background-color: green;
+}
+.hero__span--react {
+  background-color: purple;
+}
+
+.info {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+  gap: 20px;
+}
+.info__container {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+.info__container--html {
+  background-color: coral;
+}
+.info__container--css {
+  background-color: royalblue;
+}
+.info__container--javascript {
+  background-color: yellow;
+}
+.info__container--node {
+  background-color: greenyellow;
+}
+.info__container--mongo {
+  background-color: green;
+}
+.info__container--react {
+  background-color: purple;
+}
+
+.gallery {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+  margin: 20px;
+}
+.gallery .gallery-container {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+.gallery .gallery-container .gallery-image {
+  width: 450px;
+}
+@media screen and (max-width: 480px) {
+  .gallery .gallery-container .gallery-image {
+    width: 250px;
+  }
+}
+.gallery .gallery-container .gallery-image__image {
+  width: 100%;
+}
+
+.footer {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+.footer .footer-image {
+  width: 50px;
+}
+.footer .footer-image__image {
+  width: 100%;
+}/*# sourceMappingURL=app.css.map */
