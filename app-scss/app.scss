@@ -1,0 +1,158 @@
+// $green: green;
+
+
+// .header{
+//     background-color: $green;
+// }
+// $color-black: black;
+// $color-white: white;
+// $font-normal: Verdana;
+// $font-title: Helvetica;
+
+// header{
+//     color: $color-black;
+//     font-family: $font-normal;
+// }
+
+// h1{
+//     color: $color-white;
+// }
+
+//-------------/
+
+// $colors: (
+//     "black": black,
+//     "white": white,
+// );
+
+// $fonts: (
+//     "normal": Verdana,
+//     "title": Helvetica,
+// );
+
+// $sizes: (
+//     "title": 20px,
+//     "subtitle": 15px,
+//     "paragraph":  14px,
+// );
+
+// $spacing: (
+//     "list": 10px,
+//     "block": 20px,
+// );
+
+// header{
+//     color: map-get($colors, "black");
+//     font-family: map-get($fonts, "normal" );
+// }
+
+// h1{
+//     font-size: map-get($sizes , "title" );
+// }
+
+// p{
+//     font-size: map-get($sizes, "paragraph" );
+// }
+
+// ul{
+//     gap: map-get($spacing, "list");
+// }
+
+// Como hacer funciones en SASS
+
+/*
+    Mixin sin Argumentos. Recuerda.
+    Creamos con @mixin
+    Usamos con @include
+    Si no hay argumnetos podemos no poner los "()"
+*/
+
+// @mixin nombremixin() {
+//     background: black;
+//     color: white;
+// }
+
+// header{
+//     @include nombremixin();
+// }
+
+// .other{
+//     @include nombremixin();
+// }
+
+// .one{
+//     @include nombremixin();
+// }
+
+/* Mixin con argumentos */
+// @mixin backgroundColors( $argumento1, $argumento2 ) {
+//     background: $argumento1;
+//     color: $argumento2;
+// }
+
+// header{
+//     @include backgroundColors(black, white);
+// }
+
+// .other{
+//     @include backgroundColors(red, blue);
+// }
+
+// .one{
+//     @include backgroundColors(green, yellow);
+// }
+
+// $title-size: 20px;
+// $title-type: Verdana;
+// $title-color: rgb(156, 255,80);
+
+// @mixin transformTitle($size, $type, $color) {
+//     font-size: $size;
+//     font-family: $type;
+//     color: $color;
+// }
+
+// h1 {
+//     @include transformTitle($title-size,$title-type ,$title-color )
+// }
+
+// $mobile-screen: 480px;
+// $tablet-screen: 740px;
+
+// @mixin mobile() {
+//     @media screen and( max-width: $mobile-screen) {
+//         @content;
+//     }
+// }
+// @mixin tablet() {
+//     @media screen and( max-width: $tablet-screen) {
+//         @content;
+//     }
+// }
+
+// p{
+//     font-size: 40px;
+//     @include mobile(){
+//         font-size: 20px;
+//     }
+//     @include tablet(){
+//         font-size: 30px;
+//     }
+// }
+
+@mixin flexible( $display, $direction, $cut, $justify, $align){
+    display: $display;
+    flex-flow: $direction $cut;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+.block-flex{
+    @include flexible(flex, row, wrap, center, center);
+}
+h1{
+    width: 30px;
+    height: 50px;
+    background-color: coral;
+    margin: 10px;
+}

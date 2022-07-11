@@ -1,0 +1,20 @@
+/*
+    Mixin sin Argumentos. Recuerda.
+    Creamos con @mixin
+    Usamos con @include
+    Si no hay argumnetos podemos no poner los "()"
+*/
+/* Mixin con argumentos */
+.block-flex {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  width: 30px;
+  height: 50px;
+  background-color: coral;
+  margin: 10px;
+}/*# sourceMappingURL=app.css.map */
